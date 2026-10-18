@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .banner-warning {
+            background-color: #ffcccc;
+            color: #990000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #cc0000;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #003366;
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #002b55;
+        }
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f2ff;
+            border-left: 5px solid #004080;
+            border-radius: 4px;
+        }
+        .result-box h3 {
+            margin-top: 0;
+            color: #004080;
+        }
+        .disclaimer-footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- স্পষ্ট সতর্কতা ব্যানার -->
+    <div class="banner-warning">
+        Australian an official Australian Government website
+    </div>
+
+    <div class="container">
+        <h1>Visa </h1>
+
+        <form id="visaForm">
+            <div class="form-group">
+                <label for="passport">Passport Number (নমুনা):</label>
+                <input type="text" id="passport" placeholder="e.g. A1234567" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reference">Visa Reference Number (নমুনা):</label>
+                <input type="text" id="reference" placeholder="e.g. 987654321" required>
+            </div>
+
+            <button type="button" onclick="showDemoResult()">Check Visa</button>
+        </form>
+
+        <!-- Results -->
+        <div id="result" class="result-box">
+            <h3>Online Result </h3>
+            <p><strong>Visa Status:</strong> Active (accept)</p>
+            <p><strong>Visa Class:</strong> Worker (Subclass 482) - Educational Official</p>
+            <p><strong>Expiry Date:</strong> 31-Dec-2030</p>
+            <p style="color: red; font-size: 12px; margin-top: 10px;">
+                
+            </p>
+        </div>
+
+        <div class="disclaimer-footer">
+            This is an educational mock-up page for web development purposes Accept .
+        </div>
+    </div>
+
+    <script>
+        function showResult() {
+            var passport = document.getElementById('passport').value;
+            var reference = document.getElementById('reference').value;
+
+            if (passport === "" || reference === "") {
+                alert("দয়া করে নমুনা ইনপুট ঘরগুলো পূরণ করুন।");
+                return;
+            }
+
+            // রেজাল্ট বক্স প্রদর্শন
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
